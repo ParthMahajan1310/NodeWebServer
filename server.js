@@ -44,7 +44,15 @@ app.get('/about', (req, res) => {
         pageTitle: 'About Page',
         currentYear: new Date().getFullYear()
     });
-})
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects Page',
+        pageMessage: 'The projects protfolio will be displayed here.',
+        currentYear: new Date().getFullYear()
+    });
+});
 
 app.listen(port, () =>  {
     console.log(`Server is up on port no: ${port}`);
